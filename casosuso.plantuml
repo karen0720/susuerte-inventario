@@ -1,16 +1,18 @@
 @startuml casossusuerteinventario
 left to right direction
+
 actor "Usuario" as est
 actor "Administrador" as admin
+actor "cajero" as cajero
 
 rectangle "Sistema de Inventario" {
-  usecase "Registrar Producto" as UC1//caso de uso 1
-  usecase "Actualizar Stock" as UC2//caso de uso 2
+  usecase "Registrar Producto" as UC1
+  usecase "Actualizar Stock" as UC2
 
 }
 est --> UC1
 est --> UC2    
 admin --> UC1
 admin --> UC2
-        
+UC1 <-- cajero
 @enduml

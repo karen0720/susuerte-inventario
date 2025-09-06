@@ -1,0 +1,17 @@
+@startuml clasesinventarios
+
+class Usuarios {
+    -id: int
+    -nombre: string 
+    -correocorporativo:string
+    +iniciarsesion(): booleran
+
+}
+
+class Administrador {
+    +realizarPedido(menu: Menu,ites: List<item>,metodoPago:String ): Pedido
+}
+
+class Cajero {} 
+
+@
