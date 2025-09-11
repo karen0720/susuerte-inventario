@@ -2,16 +2,65 @@
 
 class Usuarios {
     -id: int
-    -nombre: string 
-    -correocorporativo:string
-    +iniciarsesion(): booleran
+    -nombre: String 
+    -correocorporativo: String
+    +iniciarSesion(): boolean
 
 }
 
 class Administrador {
-    +realizarPedido(menu: Menu,ites: List<item>,metodoPago:String ): Pedido
+    + realizarPedido(menu: Menu, ites: List<Item>, metodoPago: String): Pedido
 }
 
-class Cajero {} 
+class AdministradorSusuerte{
+    + gertinarMenu(): void 
+    + actualizarTiempoEntrega(pedido: Pedido, tiempo: int):void
+}
 
-@
+class menu {
+    - id: init
+    - fecha: Date
+    - items: List<Item>
+    + mostrar(): void
+}
+
+class item {
+    - id: int
+    - nombre: Strig
+    - precio: double
+    - cantidad: int
+    + getPrecio(): bouble
+}
+class pedido {
+    - id: init
+    - fecha: Date
+    - estado: String
+    - tiempoEstimado: int
+    + confirmar(): void
+    + entregar(): void
+    + cancelar(): void
+}
+
+class notificacion{
+    - id: init
+    - mensaje: String
+    - fechaEnvio: Date
+    + enviar(usuario: Usuario): void
+}
+class inventario {
+    - id: init
+    - producto: String
+    - stock: double
+    + enviar(usuario: Usuario): void
+
+}
+Usuario <|----Estudiante 
+Usuario <|----AdministradorSusuerte
+Menu "1" ---> "*" Item 
+Administrador "1" --> "*" Pedido
+Pedido "1" --> "*" Item
+Pedido --> Notificacion
+' esto es para poder hacer de 1 menu puede tener muchos item
+
+
+@enduml

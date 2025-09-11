@@ -8,11 +8,15 @@ actor "cajero" as cajero
 rectangle "Sistema de Inventario" {
   usecase "Registrar Producto" as UC1
   usecase "Actualizar Stock" as UC2
+  usecase "listar pedidos" as UC3
 
 }
 est --> UC1
-est --> UC2    
+est --> UC2
+est --> UC    
 admin --> UC1
 admin --> UC2
-UC1 <-- cajero
+admin --> UC3
+UC1 <-- cajero 
+UC3 <-- cajero
 @enduml
